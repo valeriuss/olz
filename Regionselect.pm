@@ -7,11 +7,9 @@ use CGI::Carp qw/fatalsToBrowser/;
 use DBI;
 use Time::Local;
 
-use Digest::MD5 qw(md5 md5_hex md5_base64);
 @ISA = qw(Exporter) ;
 @EXPORT = qw(regionselectlist subregionselectlist  regionnumber2name subregionnumber2name) ;
 @EXPORT_OK = qw();
-# installing the MySQL driver
 
 use DBconnection qw($Ddbh $Ddatabase $Dport $Ddbuser $Ddbpassword $Dhostname);
 $Ddsn = "DBI:mysql:database=$Ddatabase;host=$Dhostname;port=$Dport";
@@ -35,7 +33,7 @@ for ($digit = 0; $digit <=$size; $digit++)
 my $reg_index          		= $matrix[$digit][0];
 my $reg_menu_ru        		= $matrix[$digit][3];
 print "<option  "; if ($in eq  $reg_index)           { print "selected"}   ; print " value=\"$reg_index\">$reg_menu_ru</option>" ; 
-#print "<option value=\"$reg_index\">$reg_menu_ru</option>" ; 
+
   }}
 };
 
@@ -76,7 +74,6 @@ for ($digit = 0; $digit <=$size; $digit++)
 my $reg_index          		= $matrix[$digit][0];
 my $reg_menu_ru        		= $matrix[$digit][3];
 print "<option  "; if ($in ==  $reg_index)           { print "selected"}   ; print " value=\"$reg_index\">$reg_menu_ru</option>" ; 
-#print "<option value=\"$reg_index\">$reg_menu_ru</option>" ; 
   }}
 };
 
